@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"  > <!--manifest="weather.appcache"--> 
+<head>
+	<meta charset="utf-8">
+	<title>selfNpothesis - component Dsensor.org</title>
+	<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;' name='viewport' />
+	<link rel="apple-touch-icon"  href="/images/osp_logo64.png" />
+	<link rel="apple-touch-icon-precomposed" href="/images/osp_logo64.png" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" href="css/npothesisstyle.css">
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.css">
+	
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script type="text/javascript" src="js/bignumber.js"></script>
+	<script type="text/javascript" src="js/web3.min.js"></script>	
+	<script type="text/javascript" src="js/pouchdb-2.2.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-BBQ-1.2.1.js"></script>
+	<script type="text/javascript" src="js/punch.js"></script>
+	<script type="text/javascript" src="js/IndexedDBShim.min.js"></script>
+	<script type="text/javascript" src="js/dshare-v-0.1.js"></script>
+	<script type="text/javascript" src="pouchdbutility.js"></script>
+	<script type="text/javascript" src="npothesisspace.js"></script>	
+	<script type="text/javascript" src="start.js"></script>
+	<script src="socket.io.js"></script>		
+</head>
+
+<body>
+	<div id="displaybox" style="display: none;"></div>
+	<header id="npothesis-new"><a href="" id="npothesis-add" >Add Npothesis</a> <a href="" id="add-sensor-new" >Add sensor</a></div>
+			
+<section id="npothesis">
+	<nav id="select-npothesis-view">
+		<ul>
+			<li><a href="" id="npothesis-stream-view" >Stream</a></li>
+			<li><a href="" id="npothesis-map-view" >Map</a></li>
+		</ul>
+	</nav>
+	<section id="stream-npothesis">
+		<header>Stream</header>
+		<ol>
+			<li class="stream-element"  data-stream-id="1234567891234567">
+				<div id="">new</div>
+			</li>
+			<li class="stream-element"  data-stream-id="1234567891234567">
+				<div id="">processing</div>
+			</li>
+			<li class="stream-element"  data-stream-id="1234567891234567">
+				<div id="">Settled</div>
+			</li>
+		</ol>
+		
+	</section>
+	<section id="map-npothesis">
+		<header>Map</header>
+		<canvas id="map-npothesis-canvas" class="style" width="800" height="400"></canvas>
+	</section>
+	
+</section>
+
+<div class="clear"></div>
+
+<section id="active-npothesis">
+	<header>El Nino winter snowfall  Sensor: water  CiQ 202 58%</header>
+	<div id="description-npothesis">Description:</div>
+	<div id="scripting-npothesis">Scripting:</div>
+	<div id="sensors-npothesis">Sensors:</div>
+	<div id="data-npothesis">Data:</div>
+	<div id="computation-npothesis">Computation:</div>
+	<div id="network-npothesis">Network:</div>
+	<div id="CiQ-npothesis">CiQ: 202 58%  view over time</div>
+</section>
+<div class="clear"></div>
+
+<section id="build-npothesis">
+	<header>Build a new Npothesis</header>
+
+	<form class="npothesis_form" action="#" method="post" name="npothesis_form">
+	    <ul>
+		<li>
+		     <h2>New</h2>
+		     <span class="required_notification">* Denotes Required Field</span>
+		</li>
+		<li>
+		    <label for="add-name-npothesis">Name:</label>
+		    <input type="text"  placeholder="Npothesis name" required />
+		</li>
+		<li>
+		    <label for="add-description-npothesis">Description:</label>
+		    <textarea name="message" cols="40" rows="6" required ></textarea>
+		</li>
+		<li>
+			<label for="add-scripting-npothesis">Scripting:</label>
+			<select id="add-scripting-npothesis" class="select-npothesis" >
+								<option value="snowfall-variable" selected >Snowfall</option>
+								<option value="1">Rainfall</option>
+								<option value="2">Air pressure</option>
+								<option value="3">Sun strength</option>
+								<option value="4">Wind</option>
+								<option value="5">Pollen</option>
+								<option value="6">Pollution</option>
+								<option value="7">Season</option>
+								<option value="8">Moon</option>
+								<option value="9">Sun radiation</option>
+								<option value="10">CO2</option>
+							</select>
+			<!--<input type="text"  placeholder="Variable one" required />--> = 
+			<!--<input type="text"  placeholder="Variable two" required />-->
+			<select id="add-scripting-npothesis" class="select-npothesis" >
+				<option value="snowfall-variable" selected >Mountains height</option>
+				<option value="1">Rainfall</option>
+				<option value="2">Air pressure</option>
+				<option value="3">Sun strength</option>
+				<option value="4">Wind</option>
+				<option value="5">Pollen</option>
+				<option value="6">Pollution</option>
+				<option value="7">Season</option>
+				<option value="8">Moon</option>
+				<option value="9">Sun radiation</option>
+				<option value="10">CO2</option>
+			</select>
+			+ error
+		</li>	
+		<li>
+			<label for="add-sensor-npothesis">Sensor:</label>
+				<select id="add-sensor-npothesis" class="select-npothesis" >
+					<option value="snowfall-variable" selected >Garden weather station</option>
+					<option value="1">Met Office</option>
+					<option value="2">Satellite</option>
+				</select>		
+			<!--<input type="text"  placeholder="Sensor one" required />--> = 
+				<select id="add-scripting-npothesis" class="select-npothesis" >'
+					<option value="snowfall-variable" selected >OS Map</option>
+					<option value="1">HTC mobile phone</option>
+					<option value="2">Google map</option>
+					<option value="3">Satellite</option>
+				</select>		
+			<!--<input type="text"  placeholder="Sensor two" required />-->
+			+ error 
+		</li>
+		<li>
+			<button class="submit" type="submit">Roll out to Network</button>
+		</li>
+	    </ul>
+	</form>
+
+</section>
+<div class="clear"></div>
+
+<section id="sensor">
+	<section id="add-sensor">
+		Please attach sensor
+					<form class="sensor_form" action="#" method="post" name="sensor_form">
+	    <ul>
+		<li>
+		     <h2>New sensor</h2>
+		     <span class="required_notification">* Denotes Required Field</span>
+		</li>
+		<li>
+		    <label for="add-name-sensor">Name:</label>
+		    <input type="text"  placeholder="Sensor name" required />
+		</li>
+		<li>
+		    <label for="add-type-sensor">Type:</label>
+		    <input type="text"  placeholder="Temperature" required />
+		</li>
+		<li>
+			<button class="submit" type="submit">Add Sensor Library & Seed sensor on Blockchain</button>
+		</li>
+	    </ul>
+	</form>
+	</section>
+	<section id="list-sensors">
+		<div id="sensors-npothesis">Sensors:</div>
+		<div class="sensor-list-item">HTC Mobile phone: accelerometer, gyroscope, GPS, Compas, Video, Voice<div id="sensor-library-status">Sensor Library Installed: Yes</div></div>
+	</section>		
+</section>		
+	<div class="clear"></div>
+	
+</body>
+
+</html>
