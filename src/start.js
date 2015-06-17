@@ -4,7 +4,7 @@
 */	
 $(document).ready(function(){
 
-
+	$("#dshare-api").hide();
 	// starting objects
 	livenpMap = new selfNpothesisSpace();
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
 	$("a").click(function(e) {
 		e.preventDefault(e);
 		idclick = $(this).attr("id");
-console.log(idclick);
+		
 		switch(idclick){
 
 			case "npothesis-map-view": 
@@ -67,7 +67,26 @@ console.log(idclick);
 				}
 				return false;
 						
-			break;				
+			break;	
+			/*
+			*  Dapp connectiviity control
+			*
+			*/
+			case"dshare":
+				var dshareidstatus = $("#dshare").data("dshare-status");
+				if(dshareidstatus == "on")
+				{
+					$("#dshare-api").show();
+					$("#dshare").data("dshare-status", "off");
+				}
+				else
+				{
+					$("#dshare-api").hide();
+					$("#dshare-api-add").hide();
+					$("#dshare").data("dshare-status", "on");
+				}	
+			break;
+
 		}
 		
 	});
@@ -75,12 +94,45 @@ console.log(idclick);
 	$("#displaybox").click(function(e) {
 		e.preventDefault(e);
 		idclick = $(this).attr("id");
-console.log(idclick);
 		var thediv=document.getElementById('displaybox');
 		thediv.style.display = "none";
 		thediv.innerHTML = '';
 		$("#build-npothesis").hide();
 	
 	});
+	
+
+	/*
+	*  Dapp connectiviity control
+	*
+	*/
+	$(".D-apis").click(function(e) {
+		e.preventDefault(e);
+		var $sotgt = $(e.target);			
+		idclick = $($sotgt).attr("id");
+		switch(idclick){
+						
+			case"bitcoin-api-status":
+				
+			
+			break;
+			
+			case"Dsensor-api-status":
+				$("#dshare-api-add").show();
+				$("#Dsensor-api-status").text('live');
+				$("#Dsensor-api-status").css("background-color", "green");
+			
+			break;
+			
+			case"ethereum-api-status":
+				
+			break;
+			
+			case"maidsafe-api-status":
+				
+			break;
+		}
+
+	});		
 	
 });

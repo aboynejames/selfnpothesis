@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  > <!--manifest="weather.appcache"--> 
+<html lang="en"  > <!--manifest="npothesis.appcache"--> 
 <head>
 	<meta charset="utf-8">
 	<title>selfNpothesis - component Dsensor.org</title>
@@ -42,13 +42,28 @@
 		<header>Stream</header>
 		<ol>
 			<li class="stream-element"  data-stream-id="1234567891234567">
-				<div id="">new</div>
+				<div class="stream-status-new" id="" >
+					<div class="stream-element-new" >New</div>
+					<div class="stream-element-description" >Temperature & Activity</div>
+					<div class="stream-element-sensors" >Thermometer Amiigo</div>					
+					<div class="stream-element-ciq" >123 23%</div>
+				</div>	
 			</li>
-			<li class="stream-element"  data-stream-id="1234567891234567">
-				<div id="">processing</div>
+			<li class="stream-element"  data-stream-id="1234567891234568">
+				<div class="stream-status-rolling"  id="">
+					<div class="stream-element-rolling" >Rolling</div>
+					<div class="stream-element-description" >Temperature & Sleep</div>
+					<div class="stream-element-sensors" >Thermometer Amiigo</div>					
+					<div class="stream-element-ciq" >456 34%</div>
+				</div>					
 			</li>
-			<li class="stream-element"  data-stream-id="1234567891234567">
-				<div id="">Settled</div>
+			<li class="stream-element"  data-stream-id="1234567891234569">
+				<div class="stream-status-settled"  id="">
+					<div class="stream-element-settled">Settled</div>
+					<div class="stream-element-description" >DNA - Cancer</div>
+					<div class="stream-element-sensors" >23&me Self</div>
+					<div class="stream-element-ciq" >789 45%</div>
+				</div>
 			</li>
 		</ol>
 		
@@ -178,7 +193,28 @@
 	</section>		
 </section>		
 	<div class="clear"></div>
-	
+<section id="connectivity">
+	<header class="onlinemode">
+		<nav id="dapp-api-status">
+			<ul>
+				<li>
+					 <a href="" id="dshare" data-dshare-status="on" ><img id="image-dshare" src="images/dshare-small.png" /></a>
+					 <a href="" id="sshare" data-sshare-status="on" ><img id="image-sshare" src="images/sshare-small.png" /></a>
+					 <a href="" id="help-online" >HELP</a>  
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div id="dshare-api">
+		<div class="D-apis" >bitcoin <div id="bitcoin-api-status">add</div></div>
+		<div class="D-apis" >ethereum <div id="ethereum-api-status">add</div></div>
+		<div class="D-apis" >Dsensor <div id="Dsensor-api-status">add</div></div>
+		<div class="D-apis" >MaidSafe <div id="maidsafe-api-status">add</div></div>
+	</div>
+	<div id="dshare-api-add">
+		Comming soon: Dsensor Decentralized Sensor Mapping Protocol.
+	</div>
+</section>	
 </body>
 
 </html>
