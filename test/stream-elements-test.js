@@ -33,6 +33,14 @@ casper.then(function() {
 	
 });
 
+casper.then(function() {
+	this.test.comment('check a 4th stream element exists');
+	casper.test.assertExists('.stream-element');
+	casper.test.assertExists('#stream-npothesis ol > li:nth-child(4)');
+	
+});
+
+
 casper.run(function() {
 
 	this.test.done();

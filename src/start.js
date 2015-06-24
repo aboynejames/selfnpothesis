@@ -101,6 +101,25 @@ $(document).ready(function(){
 	
 	});
 	
+	/**
+	*
+	* click on fusion element
+	*/
+	$("#fusionnp").click(function(e) {
+		e.preventDefault(e);
+		idclick = $(this).attr("id");
+		if(idclick)
+		{		
+			var fusionchain = '';
+			fusionchain += '<div class="stream-status-settled"  id="settlednp"><div class="stream-element-settled">Settled</div><div class="stream-element-description" >Heat transfer to pool</div><div class="stream-element-sensors" >thermometer</div><div class="stream-element-ciq" >9343 89%</div></div>';
+			fusionchain += '<div class="stream-status-settled"  id="settlednp"><div class="stream-element-settled">Settled</div><div class="stream-element-description" >Monitor temperature</div><div class="stream-element-sensors" >thermometer</div><div class="stream-element-ciq" >543 89%</div></div>';
+			fusionchain += '<div class="stream-status-settled"  id="settlednp"><div class="stream-element-settled">Settled</div><div class="stream-element-description" >Pool pump capacity</div><div class="stream-element-sensors" >thermometer</div><div class="stream-element-ciq" >493 89%</div></div>';
+			fusionchain += '<div class="stream-status-settled"  id="settlednp"><div class="stream-element-settled">Settled</div><div class="stream-element-description" >Heat element to H20 energy transfer</div><div class="stream-element-sensors" >thermometer</div><div class="stream-element-ciq" >2453 89%</div></div>';
+			fusionchain += '<div class="stream-status-settled"  id="settlednp"><div class="stream-element-settled">Settled</div><div class="stream-element-description" >energy conservation</div><div class="stream-element-sensors" ></div><div class="stream-element-ciq" >4543 99.4%</div></div>';			
+			$("#fusionnp-chain").html(fusionchain);
+		}	
+	
+	});	
 
 	/*
 	*  Dapp connectiviity control
